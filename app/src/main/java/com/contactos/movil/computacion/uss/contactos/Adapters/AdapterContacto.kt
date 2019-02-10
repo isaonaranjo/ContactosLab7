@@ -14,21 +14,24 @@ import com.contactos.movil.computacion.uss.contactos.R
 /**
  * Maria Isabel Ortiz Naranjo
  * 18176
+ * Clase adaptador Contacto
  */
 class AdapterContacto(private val activity: Activity, private val list: List<Contacto>) : BaseAdapter() {
-
+    // Metodo getCount
     override fun getCount(): Int {
         return list.size
     }
-
+    // Metodo getItem
     override fun getItem(position: Int): Any {
         return list[position]
     }
 
+    // Metodo getItemId
     override fun getItemId(position: Int): Long {
         return position.toLong()
     }
 
+    // metodo GetView
     override fun getView(position: Int, convertView: View?, viewGroup: ViewGroup): View {
         var v = convertView
         if (convertView == null) {

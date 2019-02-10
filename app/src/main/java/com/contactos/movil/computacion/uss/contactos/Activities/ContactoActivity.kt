@@ -22,11 +22,11 @@ import com.contactos.movil.computacion.uss.contactos.Modelo.Contacto
 import com.contactos.movil.computacion.uss.contactos.R
 
 class ContactoActivity : AppCompatActivity() {
-    internal var etNombreE: EditText
-    internal var etTelefonoE: EditText
-    internal var etEmailE: EditText
-    internal var daocontacto: DaoContacto
-    internal var contacto: Contacto
+    internal lateinit var etNombreE: EditText
+    internal lateinit var etTelefonoE: EditText
+    internal lateinit var etEmailE: EditText
+    internal lateinit var daocontacto: DaoContacto
+    internal lateinit var contacto: Contacto
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

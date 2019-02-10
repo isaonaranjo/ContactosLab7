@@ -13,13 +13,14 @@ class Contacto {
     constructor() {
 
     }
-
+    // Constructor
     constructor(email: String, telefono: String, nombre: String, id: Int) {
         this.email = email
         this.telefono = telefono
         this.nombre = nombre
         this.id = id
     }
+    // Constructor
 
     constructor(nombre: String, telefono: String, email: String) : super() {
         this.nombre = nombre
@@ -27,6 +28,7 @@ class Contacto {
         this.email = email
     }
 
+    // Constructor
     override fun toString(): String {
         return this.nombre
     }

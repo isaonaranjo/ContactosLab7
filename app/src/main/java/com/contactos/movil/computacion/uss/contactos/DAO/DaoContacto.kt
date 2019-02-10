@@ -44,7 +44,7 @@ class DaoContacto(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, n
     }
 
     fun open() {
-        try { // Abrimos la base de datos en modo escritura
+        try { // Aqui se abre la base de datos
             db = this.writableDatabase
         } catch (e: Exception) {
             throw RuntimeException("Error al abrir la base de datos.")
@@ -54,7 +54,7 @@ class DaoContacto(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, n
 
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        db.execSQL("DROP TABLE IF EXISTS; $CREATE_TABLE_Contacto")
+        db.execSQL("DROP TABLE IF EXISTS; " + CREATE_TABLE_Contacto)
         onCreate(db)
     }
 

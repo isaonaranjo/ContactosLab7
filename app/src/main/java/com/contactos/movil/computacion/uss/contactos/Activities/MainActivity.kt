@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         daocontacto = DaoContacto(this)
+        // Se crean los contactos
         if (daocontacto.allStudentsList.size == 0) {
             daocontacto.addContactoDetail(Contacto("Daniela", "123456878", "daniela@gmail.com"))
             daocontacto.addContactoDetail(Contacto("Fernando", "12345678", "fernando@gmail.com"))
@@ -70,6 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         val fab = findViewById(R.id.fab) as FloatingActionButton
 
+        // Listview de los contactos
         listViewContactos.onItemLongClickListener = AdapterView.OnItemLongClickListener { arg0, arg1, pos, arg3 ->
             AlertDialog.Builder(this@MainActivity)
                     .setTitle("Eliminar")
@@ -94,7 +96,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("email", contacto.email)
             startActivity(intent)
         }
-
+        // Registrar los contactos
         fab.setOnClickListener {
             val inflater = layoutInflater
             val dialoglayout = inflater.inflate(R.layout.dialog, null)
@@ -108,7 +110,7 @@ class MainActivity : AppCompatActivity() {
                 if (etNombre.text.toString() != "" &&
                         etTelefono.text.toString() != "" &&
                         etEmail.text.toString() != "") {
-
+                    // Restricciones para el Email
                     if (etEmail.text.toString().matches(PATTERN_EMAIL.toRegex())) {
                         val contacto = Contacto(etNombre.text.toString(), etTelefono.text.toString(), etEmail.text.toString())
                         daocontacto.addContactoDetail(contacto)
@@ -125,12 +127,13 @@ class MainActivity : AppCompatActivity() {
             builder.show()
         }
     }
-
+    // Listar los contactos
     private fun Listar() {
         contactos = daocontacto.allStudentsList
         val adapterMovimiento = AdapterContacto(this@MainActivity, contactos)
         listViewContactos.adapter = adapterMovimiento
     }
+    // Listar los contactos
 
     private fun Listar(name: String) {
         contactos = daocontacto.searchContact(name)
