@@ -3,6 +3,7 @@ package com.contactos.movil.computacion.uss.contactos.Activities
 /**
  * Maria Isabel Ortiz Naranjo
  * 18176
+ * Clase contacto
  */
 
 import android.content.Intent
