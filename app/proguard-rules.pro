@@ -1,3 +1,5 @@
+# Maria Isabel Ortiz Naranjo
+# Carne: 18176
 # Add project specific ProGuard rules here.
 # By default, the flags in this file are appended to flags specified
 # in C:\Users\guima\AppData\Local\Android\sdk/tools/proguard/proguard-android.txt
